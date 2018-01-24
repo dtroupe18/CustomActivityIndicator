@@ -13,8 +13,8 @@
 		55FB08C62018D8CA008A5DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08C52018D8CA008A5DF1 /* Assets.xcassets */; };
 		55FB08C92018D8CA008A5DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08C72018D8CA008A5DF1 /* LaunchScreen.storyboard */; };
 		55FB08D12018D8FD008A5DF1 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB08D02018D8FD008A5DF1 /* CustomActivityIndicator.swift */; };
-		55FB08DD2018E2C7008A5DF1 /* indicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08DB2018E2C7008A5DF1 /* indicator.gif */; };
-		55FB08DE2018E2C7008A5DF1 /* screenShot.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08DC2018E2C7008A5DF1 /* screenShot.PNG */; };
+		55FB08E22018E4CD008A5DF1 /* indicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08E02018E4CD008A5DF1 /* indicator.gif */; };
+		55FB08E32018E4CD008A5DF1 /* screenShot.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08E12018E4CD008A5DF1 /* screenShot.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		55FB08C82018D8CA008A5DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55FB08CA2018D8CA008A5DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55FB08D02018D8FD008A5DF1 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
-		55FB08DB2018E2C7008A5DF1 /* indicator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicator.gif; sourceTree = "<group>"; };
-		55FB08DC2018E2C7008A5DF1 /* screenShot.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShot.PNG; sourceTree = "<group>"; };
+		55FB08E02018E4CD008A5DF1 /* indicator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicator.gif; sourceTree = "<group>"; };
+		55FB08E12018E4CD008A5DF1 /* screenShot.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShot.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 		55FB08B22018D8CA008A5DF1 = {
 			isa = PBXGroup;
 			children = (
-				55FB08D22018DE0B008A5DF1 /* ReadMe */,
+				55FB08DF2018E4B7008A5DF1 /* ReadMe */,
 				55FB08BD2018D8CA008A5DF1 /* CustomActivityIndicator */,
 				55FB08BC2018D8CA008A5DF1 /* Products */,
 			);
@@ -72,11 +72,11 @@
 			path = CustomActivityIndicator;
 			sourceTree = "<group>";
 		};
-		55FB08D22018DE0B008A5DF1 /* ReadMe */ = {
+		55FB08DF2018E4B7008A5DF1 /* ReadMe */ = {
 			isa = PBXGroup;
 			children = (
-				55FB08DB2018E2C7008A5DF1 /* indicator.gif */,
-				55FB08DC2018E2C7008A5DF1 /* screenShot.PNG */,
+				55FB08E02018E4CD008A5DF1 /* indicator.gif */,
+				55FB08E12018E4CD008A5DF1 /* screenShot.PNG */,
 			);
 			path = ReadMe;
 			sourceTree = "<group>";
@@ -142,8 +142,8 @@
 			files = (
 				55FB08C92018D8CA008A5DF1 /* LaunchScreen.storyboard in Resources */,
 				55FB08C62018D8CA008A5DF1 /* Assets.xcassets in Resources */,
-				55FB08DE2018E2C7008A5DF1 /* screenShot.PNG in Resources */,
-				55FB08DD2018E2C7008A5DF1 /* indicator.gif in Resources */,
+				55FB08E32018E4CD008A5DF1 /* screenShot.PNG in Resources */,
+				55FB08E22018E4CD008A5DF1 /* indicator.gif in Resources */,
 				55FB08C42018D8CA008A5DF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
