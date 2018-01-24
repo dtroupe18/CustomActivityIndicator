@@ -9,17 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.cornerRadius = 4
     }
-
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        CustomActivityIndicator.sharedInstance.showActivityIndicator(uiView: self.view)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 
 }
 
