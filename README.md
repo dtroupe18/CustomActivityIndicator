@@ -3,18 +3,18 @@
 **Custom Activity Indicator - Is an activity indicator written in Swift 4 that doesn't take up the whole screen.**
 
 
-****In order to show the activity indicator, call the function from your view controller****
+**In order to show the activity indicator, call the function from your view controller**
 CustomActivityIndicator.sharedInstance.showActivityIndicator(uiView: self.view)
 
-****In order to hide the activity indicator, call the function from your view controller****
+**In order to hide the activity indicator, call the function from your view controller**
 CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view)
   
-***Sample Image***  
+**Sample Image**  
   
   ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/ReadMe/screenShot.PNG)
 
   
-***Sample Animation***
+**Sample Animation**
   
   ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/ReadMe/indicator.gif)
   
