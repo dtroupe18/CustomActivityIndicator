@@ -13,8 +13,8 @@
 		55FB08C62018D8CA008A5DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08C52018D8CA008A5DF1 /* Assets.xcassets */; };
 		55FB08C92018D8CA008A5DF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08C72018D8CA008A5DF1 /* LaunchScreen.storyboard */; };
 		55FB08D12018D8FD008A5DF1 /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB08D02018D8FD008A5DF1 /* CustomActivityIndicator.swift */; };
-		55FB08D52018DE21008A5DF1 /* indicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08D32018DE21008A5DF1 /* indicator.gif */; };
-		55FB08D62018DE21008A5DF1 /* screenShot.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08D42018DE21008A5DF1 /* screenShot.PNG */; };
+		55FB08D92018E25A008A5DF1 /* screenShot.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08D72018E25A008A5DF1 /* screenShot.PNG */; };
+		55FB08DA2018E25A008A5DF1 /* indicator.gif in Resources */ = {isa = PBXBuildFile; fileRef = 55FB08D82018E25A008A5DF1 /* indicator.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		55FB08C82018D8CA008A5DF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55FB08CA2018D8CA008A5DF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55FB08D02018D8FD008A5DF1 /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
-		55FB08D32018DE21008A5DF1 /* indicator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicator.gif; sourceTree = "<group>"; };
-		55FB08D42018DE21008A5DF1 /* screenShot.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShot.PNG; sourceTree = "<group>"; };
+		55FB08D72018E25A008A5DF1 /* screenShot.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenShot.PNG; sourceTree = "<group>"; };
+		55FB08D82018E25A008A5DF1 /* indicator.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = indicator.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +75,8 @@
 		55FB08D22018DE0B008A5DF1 /* ReadMe */ = {
 			isa = PBXGroup;
 			children = (
-				55FB08D32018DE21008A5DF1 /* indicator.gif */,
-				55FB08D42018DE21008A5DF1 /* screenShot.PNG */,
+				55FB08D82018E25A008A5DF1 /* indicator.gif */,
+				55FB08D72018E25A008A5DF1 /* screenShot.PNG */,
 			);
 			path = ReadMe;
 			sourceTree = "<group>";
@@ -142,9 +142,9 @@
 			files = (
 				55FB08C92018D8CA008A5DF1 /* LaunchScreen.storyboard in Resources */,
 				55FB08C62018D8CA008A5DF1 /* Assets.xcassets in Resources */,
-				55FB08D62018DE21008A5DF1 /* screenShot.PNG in Resources */,
-				55FB08D52018DE21008A5DF1 /* indicator.gif in Resources */,
 				55FB08C42018D8CA008A5DF1 /* Main.storyboard in Resources */,
+				55FB08D92018E25A008A5DF1 /* screenShot.PNG in Resources */,
+				55FB08DA2018E25A008A5DF1 /* indicator.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

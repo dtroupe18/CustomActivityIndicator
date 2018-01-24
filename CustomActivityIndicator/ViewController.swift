@@ -20,9 +20,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        button.isHidden = true
         CustomActivityIndicator.sharedInstance.showActivityIndicator(uiView: self.view)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view)
+            self.button.isHidden = false
         }
     }
     
