@@ -1,5 +1,5 @@
 # Custom Activity Indicator 
-An activity indicator written in Swift 4 that doesn't take up the whole screen.**
+An activity indicator written in Swift 4 that doesn't take up the whole screen.
 
 
 ## Usage
