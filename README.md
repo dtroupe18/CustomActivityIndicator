@@ -15,7 +15,7 @@ In order to hide the activity indicator, call the function from your view contro
 CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view)
 ```
 
-If showActivityIndicator and hideActivityIndicator are called in rapid succession this activity indicator might not be removed from the current view. You can fix this by providing a slight delay for instances where this might apply (a task that could immediately fail for example).
+If ```swift showActivityIndicator``` and ```swifthideActivityIndicator``` are called in rapid succession this activity indicator might not be removed from the current view. You can fix this by providing a slight delay for instances where this might apply (a task that could immediately fail for example).
 
 ```swift
 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
