@@ -44,6 +44,32 @@ class CustomActivityIndicator {
         }
     }
     
+    // Show customized activity indicator,
+    // actually add activity indicator to passing view
+    // @param uiView - add activity indicator to this view
+    // @param color - color for the background of the activity indicator
+    // @param size - desired size of the activity indicator
+    //
+    func showActivityIndicator(uiView: UIView, color: UIColor, size: Double) {
+        uiView.isUserInteractionEnabled = false
+        loadingView.frame = CGRect(x: 0, y: 0, width: size, height: size)
+        loadingView.center = uiView.center
+        loadingView.backgroundColor = color
+        loadingView.clipsToBounds = true
+        loadingView.layer.cornerRadius = 10
+        
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: size / 2, height: size / 2)
+        activityIndicator.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
+        activityIndicator.hidesWhenStopped = true
+        
+        DispatchQueue.main.async {
+            self.loadingView.addSubview(self.activityIndicator)
+            uiView.addSubview(self.loadingView)
+            self.activityIndicator.startAnimating()
+        }
+    }
     
     // Hide activity indicator
     // Actually remove activity indicator from its super view
@@ -60,6 +86,23 @@ class CustomActivityIndicator {
             }
         }
     }
+    
+    // Hide activity indicator
+    // Actually remove activity indicator from its super view
+    // @param uiView - remove activity indicator from this view
+    // @param delay - milliseconds to delay the removal of the activity indicator
+    //
+    func hideActivityIndicator(uiView: UIView, delay: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            if self.loadingView.isDescendant(of: uiView) {
+                uiView.isUserInteractionEnabled = true
+                self.activityIndicator.stopAnimating()
+                self.loadingView.removeFromSuperview()
+            }
+        }
+    }
+    
+    
     
     // Create UIColor from hex values
     // @param rgbValue - hex color value
