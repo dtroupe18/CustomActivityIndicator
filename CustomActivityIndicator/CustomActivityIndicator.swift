@@ -6,7 +6,6 @@
 //  Copyright © 2018 Dave. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class CustomActivityIndicator {
@@ -28,7 +27,7 @@ class CustomActivityIndicator {
         uiView.isUserInteractionEnabled = false
         loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         loadingView.center = uiView.center
-        loadingView.backgroundColor = UIColor.lightGray
+        loadingView.backgroundColor = UIColor.darkGray
         loadingView.clipsToBounds = true
         loadingView.layer.cornerRadius = 10
         
