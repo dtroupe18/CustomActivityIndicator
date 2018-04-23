@@ -28,11 +28,11 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: Any) {
         // Show standard activity indicator
         //
-        CustomActivityIndicator.sharedInstance.showActivityIndicator(uiView: self.view)
+        CustomActivityIndicator.sharedInstance.showActivityIndicator(uiView: self.view, color: nil, labelText: "Loading User Data. Plus some long text for no reason.")
         
         // Now you can pass the desired delay when calling hideActivityIndicator
         //
-        CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view, delay: 2.0)
+        CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view, delay: 3.0)
     }
     @IBAction func colorPressed(_ sender: Any) {
         // Pass a color and size to the activity indicator
