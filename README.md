@@ -36,9 +36,13 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 
 ```
 
-**Sample Image**  
+**Sample Images**  
   
   ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/ReadMe/screenShot.PNG)
+  
+  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/ReadMe/screenShot2.PNG)
+  
+  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/ReadMe/screenShot3.PNG)
 
   
 **Sample Animation**
