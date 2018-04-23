@@ -112,10 +112,14 @@ class CustomActivityIndicator {
         //
         if width > 200 {
             let height: CGFloat = labelText.height(withConstrainedWidth: 200, font: UIFont.systemFont(ofSize: 17))
+            if height > 200 {
+                showActivityIndicator(uiView: uiView)
+                return
+            }
             loadingView.frame = CGRect(x: 0, y: 0, width: 220, height: 100 + height)
             loadingView.center = uiView.center
             label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: height))
-            label.center = CGPoint(x: loadingView.frame.size.width / 2, y: 50 + height)
+            label.center = CGPoint(x: loadingView.frame.size.width / 2, y: (height / 2) + 80)
             label.numberOfLines = 0
             activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
             activityIndicator.center = CGPoint(x: 110, y: 50)
