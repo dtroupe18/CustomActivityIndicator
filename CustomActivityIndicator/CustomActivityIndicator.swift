@@ -13,7 +13,11 @@ class CustomActivityIndicator {
     // We need to make this a singleton in order for
     // the same views to be added and removed each time
     //
-    static let sharedInstance = CustomActivityIndicator()
+    static let shared = CustomActivityIndicator()
+    
+    // Init is private so another instance of this class cannot be created
+    //
+    private init() {}
     
     var loadingView: UIView = UIView()
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
