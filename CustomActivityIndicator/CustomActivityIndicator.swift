@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomActivityIndicator {
+final class CustomActivityIndicator {
     
     // We need to make this a singleton in order for
     // the same views to be added and removed each time
@@ -186,27 +186,10 @@ class CustomActivityIndicator {
             }
         }
     }
-    
-    // Create UIColor from hex values
-    // @param rgbValue - hex color value
-    // @param alpha - transparency level
-    //
-    func UIColorFromHex(rgbValue: UInt32, alpha: Double = 1.0) -> UIColor {
-        let red = CGFloat((rgbValue & 0xFF0000) >> 16) / 256.0
-        let green = CGFloat((rgbValue & 0xFF00) >> 8) / 256.0
-        let blue = CGFloat(rgbValue & 0xFF) / 256.0
-        
-        return UIColor(red: red, green: green, blue: blue, alpha: CGFloat(alpha))
-    }
-    
 }
 
-// In order to show the activity indicator, call the function from your view controller
-// CustomActivityIndicator.sharedInstance.showActivityIndicator(uiView: self.view)
-
-// In order to hide the activity indicator, call the function from your view controller
-// CustomActivityIndicator.sharedInstance.hideActivityIndicator(uiView: self.view)
-
+// Required extensions to calculate the size of the activity indicator when text for a label is used
+//
 extension String {
     
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
