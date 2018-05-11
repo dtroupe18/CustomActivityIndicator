@@ -117,6 +117,8 @@ final class CustomActivityIndicator {
         if width > 200 {
             let height: CGFloat = labelText.height(withConstrainedWidth: 200, font: UIFont.systemFont(ofSize: 17))
             if height > 200 {
+                // Too Large just show a regular indicator
+                //
                 showActivityIndicator(uiView: uiView, color: color)
                 return
             }
@@ -168,6 +170,7 @@ final class CustomActivityIndicator {
                 uiView.isUserInteractionEnabled = true
                 self.activityIndicator.stopAnimating()
                 self.loadingView.removeFromSuperview()
+                self.label.text = ""
             }
         }
     }
@@ -183,6 +186,7 @@ final class CustomActivityIndicator {
                 uiView.isUserInteractionEnabled = true
                 self.activityIndicator.stopAnimating()
                 self.loadingView.removeFromSuperview()
+                self.label.text = ""
             }
         }
     }
