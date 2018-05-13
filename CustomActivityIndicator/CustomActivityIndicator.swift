@@ -26,65 +26,14 @@ final class CustomActivityIndicator {
     // Show customized activity indicator,
     // actually add activity indicator to passing view
     // @param uiView - add activity indicator to this view
-    //
-    func showActivityIndicator(uiView: UIView) {
-        uiView.isUserInteractionEnabled = false
-        loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        loadingView.center = uiView.center
-        loadingView.backgroundColor = UIColor.darkGray
-        loadingView.clipsToBounds = true
-        loadingView.layer.cornerRadius = 10
-        
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle =
-            UIActivityIndicatorViewStyle.whiteLarge
-        activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
-        activityIndicator.hidesWhenStopped = true
-        
-        DispatchQueue.main.async {
-            self.loadingView.addSubview(self.activityIndicator)
-            uiView.addSubview(self.loadingView)
-            self.activityIndicator.startAnimating()
-        }
-    }
-    
-    // Show customized activity indicator,
-    // actually add activity indicator to passing view
-    // @param uiView - add activity indicator to this view
-    // @param color (optional) - color for the background of the activity indicator
-    //
-    func showActivityIndicator(uiView: UIView, color: UIColor?) {
-        uiView.isUserInteractionEnabled = false
-        loadingView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        loadingView.center = uiView.center
-        loadingView.backgroundColor = color ?? UIColor.darkGray
-        loadingView.clipsToBounds = true
-        loadingView.layer.cornerRadius = 10
-        
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle =
-            UIActivityIndicatorViewStyle.whiteLarge
-        activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
-        activityIndicator.hidesWhenStopped = true
-        
-        DispatchQueue.main.async {
-            self.loadingView.addSubview(self.activityIndicator)
-            uiView.addSubview(self.loadingView)
-            self.activityIndicator.startAnimating()
-        }
-    }
-    
-    // Show customized activity indicator,
-    // actually add activity indicator to passing view
-    // @param uiView - add activity indicator to this view
     // @param color - color for the background of the activity indicator
     // @param size - desired size of the activity indicator
     //
-    func showActivityIndicator(uiView: UIView, color: UIColor?, size: Double) {
+    func showActivityIndicator(uiView: UIView, backgroundColor: UIColor = .darkGray, size: Double = 80) {
         uiView.isUserInteractionEnabled = false
         loadingView.frame = CGRect(x: 0, y: 0, width: size, height: size)
         loadingView.center = uiView.center
-        loadingView.backgroundColor = color ?? UIColor.darkGray
+        loadingView.backgroundColor = backgroundColor
         loadingView.clipsToBounds = true
         loadingView.layer.cornerRadius = 10
         
@@ -107,9 +56,10 @@ final class CustomActivityIndicator {
     // @param color (optional) - color for the background of the activity indicator
     // @param size - desired size of the activity indicator
     //
-    func showActivityIndicator(uiView: UIView, color: UIColor?, labelText: String) {
-        uiView.isUserInteractionEnabled = false
+    func showActivityIndicator(uiView: UIView, labelText: String, backgroundColor: UIColor = .darkGray,
+                               textColor: UIColor = .white) {
         
+        uiView.isUserInteractionEnabled = false
         let width: CGFloat = labelText.width(withConstrainedHeight: 21.0, font: UIFont.systemFont(ofSize: 17))
         
         // Max width is 200 if width is greater than this we need to create a multi-lined label
@@ -119,7 +69,7 @@ final class CustomActivityIndicator {
             if height > 200 {
                 // Too Large just show a regular indicator
                 //
-                showActivityIndicator(uiView: uiView, color: color)
+                showActivityIndicator(uiView: uiView, backgroundColor: backgroundColor)
                 return
             }
             loadingView.frame = CGRect(x: 0, y: 0, width: 220, height: 110 + height)
@@ -139,7 +89,7 @@ final class CustomActivityIndicator {
             activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
         }
         
-        loadingView.backgroundColor = color ?? UIColor.darkGray
+        loadingView.backgroundColor = backgroundColor
         loadingView.clipsToBounds = true
         loadingView.layer.cornerRadius = 10
         
@@ -210,5 +160,18 @@ extension String {
         return ceil(boundingBox.width)
     }
 }
+
+// Sample calls to show indicator
+//
+
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view)
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .red)
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, size: 200)
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .black, size: 100)
+
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here")
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .red)
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", textColor: .red)
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .black, textColor: .red)
 
 

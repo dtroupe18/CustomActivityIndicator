@@ -26,19 +26,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        // Show standard activity indicator
-        //
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, color: nil, labelText: "Loading User Data. Plus some long text for no reason. Adding even more text just to make sure this still works. Up to a height of 200. Which is the max size we will allow. Well that was only 143 height so we need to add more text")
-        
-        // Now you can pass the desired delay when calling hideActivityIndicator
-        //
-        CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, delay: 3.0)
+        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view)
+        CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, delay: 1.5)
     }
+    
     @IBAction func colorPressed(_ sender: Any) {
-        // Pass a color and size to the activity indicator
-        //
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, color: UIColor.black, size: 100)
-        
+        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Creating user account")
         CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, delay: 1.5)
     }
     
