@@ -244,7 +244,7 @@ final class CustomActivityIndicator {
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .red)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, size: 200)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .black, size: 100)
-
+//
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here")
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .red)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", textColor: .red)
