@@ -49,9 +49,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func fadePressed(_ sender: UIButton) {
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true)
+        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true, duration: 0.5)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true)
+            CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true, duration: 2.0)
         }
     }
     

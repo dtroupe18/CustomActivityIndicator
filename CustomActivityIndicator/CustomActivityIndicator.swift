@@ -26,11 +26,16 @@ final class CustomActivityIndicator {
     // Show customized activity indicator,
     // actually add activity indicator to passing view
     // @param uiView - add activity indicator to this view
-    // @param color - color for the background of the activity indicator
+    // @param backgroundColor - color for the background of the activity indicator
     // @param size - desired size of the activity indicator
+    // @parm animated - Bool animate the appearance (fade in / out)
+    // @parm duration - Length of time for the animation
     //
-    func showActivityIndicator(uiView: UIView, backgroundColor: UIColor = .darkGray,
-                               size: Double = 80, animated: Bool = false) {
+    func showActivityIndicator(uiView: UIView,
+                               backgroundColor: UIColor = .darkGray,
+                               size: Double = 80,
+                               animated: Bool = false,
+                               duration: Double = 1.0) {
         
         uiView.isUserInteractionEnabled = false
         loadingView.frame = CGRect(x: 0, y: 0, width: size, height: size)
@@ -58,7 +63,7 @@ final class CustomActivityIndicator {
             self.activityIndicator.startAnimating()
             if animated {
                 // Animate the appearance
-                self.loadingView.fadeIn(duration: 1.0)
+                self.loadingView.fadeIn(duration: duration)
             }
         }
     }
@@ -66,12 +71,18 @@ final class CustomActivityIndicator {
     // Show customized activity indicator,
     // actually add activity indicator to passing view
     // @param uiView - add activity indicator to this view
-    // @param color (optional) - color for the background of the activity indicator
-    // @param size - desired size of the activity indicator
+    // @parm labelText - text to add to activity indicator
+    // @param backgroundColor - color for the background of the activity indicator
+    // @param textColor - desired color the the label text
+    // @parm animated - Bool animate the appearance (fade in / out)
+    // @parm duration - Length of time for the animation
     //
-    func showActivityIndicator(uiView: UIView, labelText: String,
-                               backgroundColor: UIColor = .darkGray, textColor: UIColor = .white,
-                               animated: Bool = false) {
+    func showActivityIndicator(uiView: UIView,
+                               labelText: String,
+                               backgroundColor: UIColor = .darkGray,
+                               textColor: UIColor = .white,
+                               animated: Bool = false,
+                               duration: Double = 1.0) {
         
         uiView.isUserInteractionEnabled = false
         let width: CGFloat = labelText.width(withConstrainedHeight: 21.0, font: UIFont.systemFont(ofSize: 17))
@@ -128,7 +139,7 @@ final class CustomActivityIndicator {
             self.activityIndicator.startAnimating()
             if animated {
                 // Animate the appearance
-                self.loadingView.fadeIn(duration: 1.0)
+                self.loadingView.fadeIn(duration: duration)
             }
         }
     }
@@ -136,15 +147,17 @@ final class CustomActivityIndicator {
     // Hide activity indicator
     // Actually remove activity indicator from its super view
     // @param uiView - remove activity indicator from this view
+    // @parm animated - Bool animate the appearance (fade in / out)
+    // @parm duration - Length of time for the animation
     //
-    func hideActivityIndicator(uiView: UIView, animated: Bool = false) {
+    func hideActivityIndicator(uiView: UIView, animated: Bool = false, duration: Double = 1.0) {
         // check to make sure container is a subview before we
         // remove it
         if loadingView.isDescendant(of: uiView) {
             DispatchQueue.main.async {
                 if animated {
                     // Fade the activity indicator out
-                    UIView.animate(withDuration: 1.0, animations: {
+                    UIView.animate(withDuration: duration, animations: {
                         self.loadingView.alpha = 0.0
                     }, completion: { finished in
                         if finished {
@@ -168,7 +181,7 @@ final class CustomActivityIndicator {
                 if self.loadingView.isDescendant(of: uiView) {
                     if animated {
                         // Fade the activity indicator out
-                        UIView.animate(withDuration: 1.0, animations: {
+                        UIView.animate(withDuration: duration, animations: {
                             self.loadingView.alpha = 0.0
                         }, completion: { finished in
                             if finished {
@@ -193,13 +206,15 @@ final class CustomActivityIndicator {
     // Actually remove activity indicator from its super view
     // @param uiView - remove activity indicator from this view
     // @param delay - milliseconds to delay the removal of the activity indicator
+    // @parm animated - Bool animate the appearance (fade in / out)
+    // @parm duration - Length of time for the animation
     //
-    func hideActivityIndicator(uiView: UIView, delay: Double, animated: Bool = false) {
+    func hideActivityIndicator(uiView: UIView, delay: Double, animated: Bool = false, duration: Double = 1.0) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             if self.loadingView.isDescendant(of: uiView) {
                 if animated {
                     // Fade the activity indicator out
-                    UIView.animate(withDuration: 1.0, animations: {
+                    UIView.animate(withDuration: duration, animations: {
                         self.loadingView.alpha = 0.0
                     }, completion: { finished in
                         if finished {
@@ -225,6 +240,7 @@ final class CustomActivityIndicator {
 
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true)
+// CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true, duration: 0.5)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .red)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, size: 200)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .black, size: 100)
@@ -233,6 +249,10 @@ final class CustomActivityIndicator {
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .red)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", textColor: .red)
 // CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .black, textColor: .red)
+
+// CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view)
+// CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true)
+// CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true, duration: 2.0)
 
 extension UIView {
     // Fade in a view with a duration
