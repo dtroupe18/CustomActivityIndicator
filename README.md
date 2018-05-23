@@ -83,6 +83,7 @@ func hideActivityIndicator(uiView: UIView, delay: Double, animated: Bool = false
  CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true, duration: 2.0)
 ```
 **Samples With Animation**
+
   ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Samples/DefaultWithFade.gif)
   ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Samples/LabelWithFade.gif)
 
