@@ -65,13 +65,13 @@
 		55FB08BD2018D8CA008A5DF1 /* CustomActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				55FB08D02018D8FD008A5DF1 /* CustomActivityIndicator.swift */,
 				55FB08BE2018D8CA008A5DF1 /* AppDelegate.swift */,
 				55FB08C02018D8CA008A5DF1 /* ViewController.swift */,
 				55FB08C22018D8CA008A5DF1 /* Main.storyboard */,
 				55FB08C52018D8CA008A5DF1 /* Assets.xcassets */,
 				55FB08C72018D8CA008A5DF1 /* LaunchScreen.storyboard */,
 				55FB08CA2018D8CA008A5DF1 /* Info.plist */,
-				55FB08D02018D8FD008A5DF1 /* CustomActivityIndicator.swift */,
 			);
 			path = CustomActivityIndicator;
 			sourceTree = "<group>";

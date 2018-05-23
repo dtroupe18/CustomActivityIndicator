@@ -20,9 +20,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mit-dg-JOf">
-                                <rect key="frame" x="122" y="452" width="130" height="30"/>
+                                <rect key="frame" x="97" y="452" width="180" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Gjo-LE-TtV"/>
+                                    <constraint firstAttribute="width" constant="180" id="JID-pY-bBP"/>
                                 </constraints>
                                 <state key="normal" title="Show Indicator">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,19 +43,49 @@
                                     <action selector="colorPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QPz-Wt-SWx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1v-NU-ZOm">
+                                <rect key="frame" x="97" y="530" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="6Dl-qg-teq"/>
+                                </constraints>
+                                <state key="normal" title="Show with Fade">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="fadePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PnG-PA-fQF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzz-JL-X2h">
+                                <rect key="frame" x="97.5" y="568" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="SbV-mY-FIO"/>
+                                </constraints>
+                                <state key="normal" title="Show Label with Fade">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="labelFadePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uLs-P6-WSQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gzz-JL-X2h" firstAttribute="top" secondItem="M1v-NU-ZOm" secondAttribute="bottom" constant="8" id="2hn-IV-8Kw"/>
                             <constraint firstItem="Mit-dg-JOf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="THB-rs-IuB"/>
+                            <constraint firstItem="M1v-NU-ZOm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Utb-r8-Fur"/>
+                            <constraint firstItem="M1v-NU-ZOm" firstAttribute="top" secondItem="sda-a3-ZL7" secondAttribute="bottom" constant="8" id="Z6m-7g-Pv1"/>
                             <constraint firstItem="Mit-dg-JOf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.4" id="l0K-Nq-ilT"/>
                             <constraint firstItem="sda-a3-ZL7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njz-Vr-1ap"/>
+                            <constraint firstItem="gzz-JL-X2h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sGP-vP-Dmg"/>
                             <constraint firstItem="sda-a3-ZL7" firstAttribute="top" secondItem="Mit-dg-JOf" secondAttribute="bottom" constant="10" id="vEb-tI-5iO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="Mit-dg-JOf" id="zPU-2d-rZH"/>
-                        <outlet property="colorButton" destination="sda-a3-ZL7" id="ozW-2z-0ub"/>
+                        <outlet property="defaultButton" destination="Mit-dg-JOf" id="zPU-2d-rZH"/>
+                        <outlet property="fadeButton" destination="M1v-NU-ZOm" id="TFU-dU-BtC"/>
+                        <outlet property="labelButton" destination="sda-a3-ZL7" id="ozW-2z-0ub"/>
+                        <outlet property="labelFadeButton" destination="gzz-JL-X2h" id="79X-ss-4ZH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
