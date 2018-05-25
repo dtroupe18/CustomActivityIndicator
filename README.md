@@ -1,11 +1,22 @@
 # Custom Activity Indicator 
 A custom activity indicator written in Swift 4 that allows for you to set the size, add text, and animate the appearance.
 
+**Samples With Animation**
 
-## Usage
+  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Swift/Samples/DefaultWithFade.gif)
+  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Swift/Samples/LabelWithFade.gif)
+
+
+**Samples Without Animation**
+  
+  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Swift/Samples/Default.gif)
+  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Swift/Samples/Label.gif)
+
+
+## Swift Usage
 Add CustomActivityIndicator.swift to your project
 
-### Sample usage
+### Swift Sample usage
 
 In order to show the activity indicator call showActivityIndicator from your view controller. Default values are provided for all parameters so you only have to pass the values you want to change. 
 
@@ -82,17 +93,5 @@ func hideActivityIndicator(uiView: UIView, delay: Double, animated: Bool = false
  CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true)
  CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true, duration: 2.0)
 ```
-**Samples With Animation**
 
-  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Samples/DefaultWithFade.gif)
-  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Samples/LabelWithFade.gif)
-
-
-**Samples Without Animation**
-  
-  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Samples/Default.gif)
-  ![Alt Text](https://github.com/dtroupe18/CustomActivityIndicator/blob/master/Samples/Label.gif)
-  
-  
-  
-  
+ 
