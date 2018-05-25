@@ -16,12 +16,35 @@ A custom activity indicator written in Swift 4 that allows for you to set the si
 ## Swift Usage
 Add CustomActivityIndicator.swift to your project
 
-### Swift Sample usage
-
-In order to show the activity indicator call showActivityIndicator from your view controller. Default values are provided for all parameters so you only have to pass the values you want to change. 
+In order to show the activity indicator call show from your view controller. Default values are provided for all parameters so you only have to pass the values you want to change. 
 
 Note: If you pass in a string for the label text you cannot set the size of the activity indicator since that will be determined by the length of the string
 
+### Showing Activity Indicator
+```swift
+CustomActivityIndicator.shared.show(uiView: self.view)
+CustomActivityIndicator.shared.show(uiView: self.view, animated: true)
+CustomActivityIndicator.shared.show(uiView: self.view, animated: true, duration: 0.5)
+CustomActivityIndicator.shared.show(uiView: self.view, backgroundColor: .red)
+CustomActivityIndicator.shared.show(uiView: self.view, size: 200)
+CustomActivityIndicator.shared.show(uiView: self.view, backgroundColor: .black, size: 100)
+        
+CustomActivityIndicator.shared.show(uiView: self.view, labelText: "Your Text Here")
+CustomActivityIndicator.shared.show(uiView: self.view, labelText: "Your Text Here", backgroundColor: .red)
+CustomActivityIndicator.shared.show(uiView: self.view, labelText: "Your Text Here", textColor: .red)
+CustomActivityIndicator.shared.show(uiView: self.view, labelText: "Your Text Here", backgroundColor: .black, textColor: .red)
+```
+
+In order to hide the activity indicator call hideActivityIndicator from your view controller. Default values are provided for all parameters so you only have to pass the values you want to change. 
+
+### Hiding Activity Indicator
+```swift
+CustomActivityIndicator.shared.hide(uiView: self.view)
+CustomActivityIndicator.shared.hide(uiView: self.view, animated: true)
+CustomActivityIndicator.shared.hide(uiView: self.view, animated: true, duration: 2.0)
+```
+
+### Show Function Stubs
 ```swift
 // Show customized activity indicator,
 // actually add activity indicator to passing view
@@ -31,11 +54,11 @@ Note: If you pass in a string for the label text you cannot set the size of the 
 // @parm animated - Bool animate the appearance (fade in / out)
 // @parm duration - Length of time for the animation
 //
-func showActivityIndicator(uiView: UIView,
-                           backgroundColor: UIColor = .darkGray,
-                           size: Double = 80,
-                           animated: Bool = false,
-                           duration: Double = 1.0)
+func show(uiView: UIView,
+          backgroundColor: UIColor = .darkGray,
+          size: Double = 80,
+          animated: Bool = false,
+          duration: Double = 1.0)
                            
 // Show customized activity indicator,
 // actually add activity indicator to passing view
@@ -46,29 +69,16 @@ func showActivityIndicator(uiView: UIView,
 // @parm animated - Bool animate the appearance (fade in / out)
 // @parm duration - Length of time for the animation
 //                           
-func showActivityIndicator(uiView: UIView,
-                           labelText: String,
-                           backgroundColor: UIColor = .darkGray,
-                           textColor: UIColor = .white,
-                           animated: Bool = false,
-                           duration: Double = 1.0)
+func show(uiView: UIView,
+          labelText: String,
+          backgroundColor: UIColor = .darkGray,
+          textColor: UIColor = .white,
+          animated: Bool = false,
+          duration: Double = 1.0)
 ```
 
-```swift
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true, duration: 0.5)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .red)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, size: 200)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, backgroundColor: .black, size: 100)
 
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here")
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .red)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", textColor: .red)
- CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Your Text Here", backgroundColor: .black, textColor: .red)
-```
-
-In order to hide the activity indicator call hideActivityIndicator from your view controller
+### Hide Function Stubs
 ```swift
 // Hide activity indicator
 // Actually remove activity indicator from its super view
@@ -76,7 +86,7 @@ In order to hide the activity indicator call hideActivityIndicator from your vie
 // @parm animated - Bool animate the appearance (fade in / out)
 // @parm duration - Length of time for the animation
 //
-func hideActivityIndicator(uiView: UIView, animated: Bool = false, duration: Double = 1.0)
+func hide(uiView: UIView, animated: Bool = false, duration: Double = 1.0)
 
 // Hide activity indicator
 // Actually remove activity indicator from its super view
@@ -85,13 +95,5 @@ func hideActivityIndicator(uiView: UIView, animated: Bool = false, duration: Dou
 // @parm animated - Bool animate the appearance (fade in / out)
 // @parm duration - Length of time for the animation
 //
-func hideActivityIndicator(uiView: UIView, delay: Double, animated: Bool = false, duration: Double = 1.0)
+func hide(uiView: UIView, delay: Double, animated: Bool = false, duration: Double = 1.0)
 ```
-
-```swift
- CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view)
- CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true)
- CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true, duration: 2.0)
-```
-
- 
