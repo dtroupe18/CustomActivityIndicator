@@ -32,16 +32,31 @@
 
 - (IBAction)showPressed:(id)sender {
     NSLog(@"Showing");
-    CustomActivityIndicator *shared = [CustomActivityIndicator shared];
-    [shared show:self.view];
+    [CustomActivityIndicator.shared show:self.view];
     
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         NSLog(@"Hiding");
-        [shared hide:self.view];
+        [CustomActivityIndicator.shared hide:self.view];
     });
 }
+
+- (IBAction)showLabelPressed:(id)sender {
+    
+}
+
+- (IBAction)animatePressed:(id)sender {
+    NSLog(@"Animating");
+    [CustomActivityIndicator.shared show:self.view backgroundColor:UIColor.darkGrayColor size:80.0 duration:1.0];
+    
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        NSLog(@"Animate Hiding");
+        [CustomActivityIndicator.shared hide:self.view duration:1.0];
+    });
+}
+
 @end
 
 

@@ -32,16 +32,48 @@
                                     <action selector="showPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gum-kX-bxh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK5-Qi-tjc">
+                                <rect key="frame" x="97" y="460" width="180" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="oZh-yY-7ig"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Show Label">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLabelPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pEE-Xu-Jsq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83a-UC-6oC">
+                                <rect key="frame" x="97" y="505" width="180" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="ulw-f7-Jwj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <state key="normal" title="Animate">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="animatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zNy-6B-DTL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.28627450980000002" green="0.66274509800000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="83a-UC-6oC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Z6-l5-IL3"/>
+                            <constraint firstItem="83a-UC-6oC" firstAttribute="top" secondItem="cK5-Qi-tjc" secondAttribute="bottom" constant="8" id="7rR-Ng-oA7"/>
+                            <constraint firstItem="cK5-Qi-tjc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Htf-kT-Xt0"/>
                             <constraint firstItem="0S1-fX-KhG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.3" id="NLx-bc-n1B"/>
                             <constraint firstItem="0S1-fX-KhG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l0Q-g1-1ed"/>
+                            <constraint firstItem="cK5-Qi-tjc" firstAttribute="top" secondItem="0S1-fX-KhG" secondAttribute="bottom" constant="8" id="mcl-4A-Auo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="animateButton" destination="83a-UC-6oC" id="svq-rq-VTk"/>
                         <outlet property="defaultButton" destination="0S1-fX-KhG" id="rOt-sH-wNl"/>
+                        <outlet property="labelButton" destination="cK5-Qi-tjc" id="1ix-9c-A3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
