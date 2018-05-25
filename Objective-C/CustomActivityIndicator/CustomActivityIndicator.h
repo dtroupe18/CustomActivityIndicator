@@ -24,6 +24,9 @@
 -(void)show: (UIView*)uiView;
 -(void)show: (UIView*)uiView backgroundColor:(UIColor*)backgroundColor size:(double)size duration:(double)duration;
 
+-(void)show: (UIView*)uiView backgroundColor:(UIColor*)backgroundColor
+                      textColor:(UIColor*)textColor labelText:(NSString*)labelText duration:(double)duration;
+
 
 -(void)hide: (UIView*)uiView;
 -(void)hide: (UIView*)uiView duration:(double)duration;
