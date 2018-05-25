@@ -32,10 +32,10 @@ final class CustomActivityIndicator {
     // @parm duration - Length of time for the animation
     //
     func show(uiView: UIView,
-                               backgroundColor: UIColor = .darkGray,
-                               size: Double = 80,
-                               animated: Bool = false,
-                               duration: Double = 1.0) {
+              backgroundColor: UIColor = .darkGray,
+              size: Double = 80,
+              animated: Bool = false,
+              duration: Double = 1.0) {
         
         uiView.isUserInteractionEnabled = false
         loadingView.frame = CGRect(x: 0, y: 0, width: size, height: size)
@@ -78,11 +78,11 @@ final class CustomActivityIndicator {
     // @parm duration - Length of time for the animation
     //
     func show(uiView: UIView,
-                               labelText: String,
-                               backgroundColor: UIColor = .darkGray,
-                               textColor: UIColor = .white,
-                               animated: Bool = false,
-                               duration: Double = 1.0) {
+              labelText: String,
+              backgroundColor: UIColor = .darkGray,
+              textColor: UIColor = .white,
+              animated: Bool = false,
+              duration: Double = 1.0) {
         
         uiView.isUserInteractionEnabled = false
         let width: CGFloat = labelText.width(withConstrainedHeight: 21.0, font: UIFont.systemFont(ofSize: 17))
