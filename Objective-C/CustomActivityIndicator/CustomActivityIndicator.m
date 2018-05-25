@@ -140,7 +140,6 @@
     });
 }
 
-
 -(void)hide:(UIView *)uiView {
     if ([loadingView isDescendantOfView:uiView]) {
         dispatch_async(dispatch_get_main_queue(), ^{

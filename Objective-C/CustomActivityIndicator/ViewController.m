@@ -21,7 +21,6 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     self.defaultButton.layer.borderWidth = 1.0;
@@ -29,11 +28,9 @@
     self.defaultButton.layer.cornerRadius = 4.0;
 }
 
-
 - (IBAction)showPressed:(id)sender {
     NSLog(@"Showing");
     [CustomActivityIndicator.shared show:self.view];
-    
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
