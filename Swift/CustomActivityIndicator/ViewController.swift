@@ -36,29 +36,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view)
+        CustomActivityIndicator.shared.show(uiView: self.view)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view)
+            CustomActivityIndicator.shared.hide(uiView: self.view)
         }
     }
     
     @IBAction func colorPressed(_ sender: Any) {
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Creating user account")
-        CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, delay: 1.5)
+        CustomActivityIndicator.shared.show(uiView: self.view, labelText: "Creating user account")
+        CustomActivityIndicator.shared.hide(uiView: self.view, delay: 1.5)
     }
     
     @IBAction func fadePressed(_ sender: UIButton) {
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, animated: true, duration: 0.5)
+        CustomActivityIndicator.shared.show(uiView: self.view, animated: true, duration: 0.5)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true, duration: 2.0)
+            CustomActivityIndicator.shared.hide(uiView: self.view, animated: true, duration: 2.0)
         }
     }
     
     @IBAction func labelFadePressed(_ sender: UIButton) {
-        CustomActivityIndicator.shared.showActivityIndicator(uiView: self.view, labelText: "Doing something", animated: true)
+        CustomActivityIndicator.shared.show(uiView: self.view, labelText: "Doing something", animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            CustomActivityIndicator.shared.hideActivityIndicator(uiView: self.view, animated: true)
+            CustomActivityIndicator.shared.hide(uiView: self.view, animated: true)
         }
     }
     

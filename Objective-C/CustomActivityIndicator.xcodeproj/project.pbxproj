@@ -13,6 +13,7 @@
 		55C1441F20B8495F00E82ECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C1441E20B8495F00E82ECD /* Assets.xcassets */; };
 		55C1442220B8495F00E82ECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C1442020B8495F00E82ECD /* LaunchScreen.storyboard */; };
 		55C1442520B8495F00E82ECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C1442420B8495F00E82ECD /* main.m */; };
+		55C1442D20B84C1900E82ECD /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C1442C20B84C1900E82ECD /* CustomActivityIndicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		55C1442120B8495F00E82ECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55C1442320B8495F00E82ECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55C1442420B8495F00E82ECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55C1442B20B84C0000E82ECD /* CustomActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
+		55C1442C20B84C1900E82ECD /* CustomActivityIndicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				55C1442020B8495F00E82ECD /* LaunchScreen.storyboard */,
 				55C1442320B8495F00E82ECD /* Info.plist */,
 				55C1442420B8495F00E82ECD /* main.m */,
+				55C1442B20B84C0000E82ECD /* CustomActivityIndicator.h */,
+				55C1442C20B84C1900E82ECD /* CustomActivityIndicator.m */,
 			);
 			path = CustomActivityIndicator;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C1441A20B8495E00E82ECD /* ViewController.m in Sources */,
+				55C1442D20B84C1900E82ECD /* CustomActivityIndicator.m in Sources */,
 				55C1442520B8495F00E82ECD /* main.m in Sources */,
 				55C1441720B8495E00E82ECD /* AppDelegate.m in Sources */,
 			);
