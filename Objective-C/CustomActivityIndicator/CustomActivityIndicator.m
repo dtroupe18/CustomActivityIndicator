@@ -87,35 +87,29 @@
     // Again if you do not want the appearance animated use duration = 0.0
     //
     uiView.userInteractionEnabled = NO;
-    CGFloat maxLabelWidth = 200;
-    label = [[UILabel alloc] init];
+    label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.font = [UIFont systemFontOfSize:15.0];
+    label.numberOfLines = 0;
     [label setText:labelText];
-    label.lineBreakMode = NSLineBreakByWordWrapping;
     
-    float width =[label.text boundingRectWithSize:label.frame.size
-     options:NSStringDrawingUsesLineFragmentOrigin
-     attributes:@{ NSFontAttributeName:label.font }
-     context:nil].size.width;
+    CGSize maxSize = CGSizeMake(200.0, 200.0);
+    CGSize requiredSize = [label sizeThatFits:maxSize];
     
-    // label.text = labelText;
-    // label.numberOfLines = 1.0;
-    // CGSize sizeNeeded = [label sizeThatFits:CGSizeMake(maxLabelWidth, CGFLOAT_MAX)];
+//    NSLog(@"requiredSize.width: %f", requiredSize.width);
+//    NSLog(@"requiredSize.height: %f", requiredSize.height);
     
-    CGSize intrinsicSize = label.intrinsicContentSize;
-    
-    NSLog(@"width: %f", width);
-    
-    
-    if (intrinsicSize.width > maxLabelWidth) {
-        NSLog(@"Annoying");
+    if (requiredSize.width > maxSize.width || requiredSize.height > maxSize.height) {
+        // Label is too big
+        //
+        [self show:uiView backgroundColor:backgroundColor size:80.0 duration:duration];
     } else {
-        loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 110)];
+        CGFloat height = requiredSize.height > 110 ? requiredSize.height + 50: 110;
+        loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 50, height)];
         loadingView.center = uiView.center;
-        label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, width, 21)];
+        label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 30, requiredSize.height + 30)];
+        label.lineBreakMode = NSLineBreakByWordWrapping;
+        label.numberOfLines = 0;
         label.center = CGPointMake(loadingView.frame.size.width / 2, 90);
-        [label.layer setBorderWidth:2.0f];
-        [label.layer setBorderColor:[UIColor orangeColor].CGColor];
         activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         activityIndicator.center = CGPointMake(loadingView.frame.size.width/2, 50.0);
     }
@@ -133,8 +127,8 @@
     activityIndicator.hidesWhenStopped = YES;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"label.width: %f", self->label.frame.size.width);
-        NSLog(@"label.height: %f", self->label.frame.size.height);
+//        NSLog(@"label.width: %f", self->label.frame.size.width);
+//        NSLog(@"label.height: %f", self->label.frame.size.height);
         [self->loadingView addSubview:self->label];
         [self->loadingView addSubview:self->activityIndicator];
         [uiView addSubview:self->loadingView];
@@ -171,16 +165,6 @@
             }];
         });
     }
-}
-
-// String calculation functions
-//
-- (CGFloat)widthOfString:(NSString *)string withFont:(UIFont *)font {
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:font, UIFontDescriptorNameAttribute, nil];
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:string attributes:attributes];
-    CGFloat size = str.size.width;
-    str = nil;
-    return size;
 }
 
 @end
