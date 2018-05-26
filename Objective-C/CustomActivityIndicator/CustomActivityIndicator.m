@@ -95,19 +95,12 @@
     CGSize maxSize = CGSizeMake(200.0, 200.0);
     CGSize requiredSize = [label sizeThatFits:maxSize];
     
-    NSLog(@"requiredSize.width: %f", requiredSize.width);
-    NSLog(@"requiredSize.height: %f", requiredSize.height);
-    
     if (requiredSize.width > maxSize.width || requiredSize.height > maxSize.height) {
         // Label is too big
         //
         [self show:uiView backgroundColor:backgroundColor size:80.0 duration:duration];
     } else {
         CGFloat height = requiredSize.height + 100;
-        
-        NSLog(@"height: %f", height);
-        NSLog(@"requiredSize.height: %f", requiredSize.height);
-        
         loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 30, height)];
         loadingView.center = uiView.center;
         label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 20, requiredSize.height + 18)];
@@ -131,8 +124,6 @@
     activityIndicator.hidesWhenStopped = YES;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"label.width: %f", self->label.frame.size.width);
-        NSLog(@"label.height: %f", self->label.frame.size.height);
         [self->loadingView addSubview:self->label];
         [self->loadingView addSubview:self->activityIndicator];
         [uiView addSubview:self->loadingView];
