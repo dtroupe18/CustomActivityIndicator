@@ -24,7 +24,6 @@ final class CustomActivityIndicator {
     var label: UILabel = UILabel()
     
     // Show customized activity indicator,
-    // actually add activity indicator to passing view
     // @param uiView - add activity indicator to this view
     // @param backgroundColor - color for the background of the activity indicator
     // @param size - desired size of the activity indicator
@@ -69,7 +68,6 @@ final class CustomActivityIndicator {
     }
     
     // Show customized activity indicator,
-    // actually add activity indicator to passing view
     // @param uiView - add activity indicator to this view
     // @parm labelText - text to add to activity indicator
     // @param backgroundColor - color for the background of the activity indicator
@@ -145,7 +143,6 @@ final class CustomActivityIndicator {
     }
     
     // Hide activity indicator
-    // Actually remove activity indicator from its super view
     // @param uiView - remove activity indicator from this view
     // @parm animated - Bool animate the appearance (fade in / out)
     // @parm duration - Length of time for the animation
@@ -203,7 +200,6 @@ final class CustomActivityIndicator {
     }
     
     // Hide activity indicator
-    // Actually remove activity indicator from its super view
     // @param uiView - remove activity indicator from this view
     // @param delay - milliseconds to delay the removal of the activity indicator
     // @parm animated - Bool animate the appearance (fade in / out)
