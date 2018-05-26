@@ -1,5 +1,5 @@
 # Custom Activity Indicator 
-A custom activity indicator written in Swift 4 and Objective-C that allows for you to set the size, add text, and animate the appearance of an activity indicator.
+A custom activity indicator written in Swift 4 and Objective-C that allows you to set the size, color, add text, and animate the appearance of an activity indicator.
 
 **Samples With Animation**
 
