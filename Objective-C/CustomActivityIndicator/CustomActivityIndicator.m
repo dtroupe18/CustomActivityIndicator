@@ -95,21 +95,25 @@
     CGSize maxSize = CGSizeMake(200.0, 200.0);
     CGSize requiredSize = [label sizeThatFits:maxSize];
     
-//    NSLog(@"requiredSize.width: %f", requiredSize.width);
-//    NSLog(@"requiredSize.height: %f", requiredSize.height);
+    NSLog(@"requiredSize.width: %f", requiredSize.width);
+    NSLog(@"requiredSize.height: %f", requiredSize.height);
     
     if (requiredSize.width > maxSize.width || requiredSize.height > maxSize.height) {
         // Label is too big
         //
         [self show:uiView backgroundColor:backgroundColor size:80.0 duration:duration];
     } else {
-        CGFloat height = requiredSize.height > 110 ? requiredSize.height + 50: 110;
-        loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 50, height)];
+        CGFloat height = requiredSize.height + 100;
+        
+        NSLog(@"height: %f", height);
+        NSLog(@"requiredSize.height: %f", requiredSize.height);
+        
+        loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 30, height)];
         loadingView.center = uiView.center;
-        label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 30, requiredSize.height + 30)];
+        label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, requiredSize.width + 20, requiredSize.height + 18)];
         label.lineBreakMode = NSLineBreakByWordWrapping;
         label.numberOfLines = 0;
-        label.center = CGPointMake(loadingView.frame.size.width / 2, 90);
+        label.center = CGPointMake(loadingView.frame.size.width / 2, loadingView.frame.size.height - requiredSize.height);
         activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
         activityIndicator.center = CGPointMake(loadingView.frame.size.width/2, 50.0);
     }
@@ -127,8 +131,8 @@
     activityIndicator.hidesWhenStopped = YES;
     
     dispatch_async(dispatch_get_main_queue(), ^{
-//        NSLog(@"label.width: %f", self->label.frame.size.width);
-//        NSLog(@"label.height: %f", self->label.frame.size.height);
+        NSLog(@"label.width: %f", self->label.frame.size.width);
+        NSLog(@"label.height: %f", self->label.frame.size.height);
         [self->loadingView addSubview:self->label];
         [self->loadingView addSubview:self->activityIndicator];
         [uiView addSubview:self->loadingView];
@@ -147,6 +151,17 @@
             [self->activityIndicator stopAnimating];
             [self->loadingView removeFromSuperview];
         });
+    } else {
+        // add a short delay incase hide was called before the view appeared
+        //
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if ([self->loadingView isDescendantOfView:uiView]) {
+                uiView.userInteractionEnabled = YES;
+                [self->activityIndicator stopAnimating];
+                [self->loadingView removeFromSuperview];
+            }
+        });
     }
 }
 
@@ -162,6 +177,21 @@
                     [self->loadingView removeFromSuperview];
                 }
             }];
+        });
+    } else {
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            if ([self->loadingView isDescendantOfView:uiView]) {
+                [UIView animateWithDuration:duration animations:^{
+                    self->loadingView.alpha = 0.0;
+                } completion:^(BOOL finished) {
+                    if (finished) {
+                        uiView.userInteractionEnabled = YES;
+                        [self->activityIndicator stopAnimating];
+                        [self->loadingView removeFromSuperview];
+                    }
+                }];
+            }
         });
     }
 }
